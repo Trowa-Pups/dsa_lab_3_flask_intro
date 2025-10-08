@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+    <style>   
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .home-btn {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 20px;
+            color: #ee811a;
+            text-decoration: underline;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .home-btn:hover {
+            color: #000000;
+        }
+     
+        .profile {
+        background-color: #ee811a;
+        padding: 20px;
+        border-radius: 10px;
+        width: 500px; 
+        margin: auto;
+        box-shadow: 0 0 10px gray;
+        color: white;
+        display: flex;              
+        align-items: center;       
+        gap: 20px;                 
+        }
+
+        .profile img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 4px solid white;
+        object-fit: cover;
+        }
+
+        .profile-content {
+            flex: 1;
+            text-align: left; 
+        }
+
+        .btn {
+            background-color: #ffffff;
+            color: #333333;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 8px 5px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #000000;
+            color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <a href="/" class="home-btn">Home Page</a>
+    <div class="profile">
+    <a href="https://ibb.co/PZNRmT2N">
+      <img src="https://i.ibb.co/PZNRmT2N/539129040-24101107462894160-7657420992301047332-n.jpg"
+           alt="Profile Picture">
+    </a>
+
+    <div class="profile-content">
+      <h2><b>Saint Trowa N. Tangco<b></h2>
+      <p>Student</p>
+      <p>Hobbies:<br>
+        • Video Games<br>
+        • Reading Manga and Manwha<br>
+        • Programming<br>
+      </p>
+
+      <nav>
+        <ul style="display: flex; list-style: none; padding: 0; margin: 0;">
+            <li style="margin-right: 15px;">
+            <a href="/works" class="btn">Works 💼</a>
+            </li>
+            <li>
+            <a href="/contact" class="btn">Contact 📞</a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .home-btn {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 20px;
+            color: #ee811a;
+            text-decoration: underline;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .home-btn:hover {
+            color: #000000;
+        }
+        
+        h1 {
+            color: #ffffff; 
+            margin-bottom: 20px;
+            font-size: 30px;
+        }
+
+        .box {
+            background-color: #ee811a;
+            padding: 30px;
+            border-radius: 10px;
+            width: 350px;
+            box-shadow: 0 0 10px gray;
+            color: white;
+            text-align: center;
+        }
+       
+        label, p {
+            text-align: left;
+            display: block;
+        }
+
+        input[type="number"], input[type="submit"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            background-color: #ffffff;
+            color: #333333;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+            transition: all 0.2s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #000000;
+            color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <a href="/" class="home-btn">Home Page</a>
+
+    <div class="box">
+
+        <h1><b>〇  Calculate the Area of the Circle  〇<b></h1>
+
+        <form action="/areaOfcircle" method="post">
+            <label for="inputRadius">Enter the radius of the circle:</label>
+            <input type="number" step="any" id="radius" name="radius">
+            <input type="submit" value="Calculate">
+        </form>
+
+        {% if result %}
+        <p><b>Area of the Circle: {{ result }}</b></p>
+        {% endif %}
+
+    </div>
+</body>
+</html>

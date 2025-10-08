@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Work Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ee811a;
+            border: 3px solid #f0f0f0;
+            border-radius: 15px;
+            padding: 30px 50px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .box {
+            background-color: #ee811a;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .home-btn {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 20px;
+            color: #ee811a;
+            text-decoration: underline;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .home-btn:hover {
+            color: #000000;
+        }
+
+        .btn {
+            background-color: #ffffff;
+            color: #333333;
+            padding: 8px 16px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 10px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #000000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        p {
+            margin-top: 5px;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <a href="/" class="home-btn">Home Page</a>
+
+    <div class="container">
+        <h1><a class="box">Welcome to my Personal Portfolio! 📖</a></h1>
+        <p>These are my current works that I have put in this Portfolio</p>
+
+        <nav>
+            <ul>
+                <li><a href="/toUpperCase" class="btn">To UpperCase (a -> A)</a></li>
+                <li><a href="/areaOfcircle" class="btn">Area of a Circle 〇</a></li>
+                <li><a href="/areaOfTriangle" class="btn">Area of a Triangle △</a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>

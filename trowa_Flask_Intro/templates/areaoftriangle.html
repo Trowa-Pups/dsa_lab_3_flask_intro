@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Area of Triangle Calculator</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .home-btn {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 20px;
+            color: #ee811a;
+            text-decoration: underline;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .home-btn:hover {
+            color: #000000;
+        }
+
+        .box {
+            background-color: #ee811a;
+            padding: 30px;
+            border-radius: 10px;
+            width: 450px;
+            box-shadow: 0 0 10px gray;
+            color: white;
+            text-align: center;
+        }
+
+        .box h1 {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            text-align: left;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            background-color: #ffffff;
+            color: #333333;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+            transition: all 0.2s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #000000;
+            color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        p {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="/" class="home-btn">Home Page</a>
+
+    <div class="box">
+        <h1><b>△ Calculate the Area of the Triangle △<b></h1>
+
+        <form action="/areaOfTriangle" method="post">
+            <input type="hidden" name="operation" value="triangle">           
+            <label for="base">Enter the base of the triangle:</label>
+            <input type="number" step="any" id="base" name="base" required>            
+            <label for="height">Enter the height of the triangle:</label>
+            <input type="number" step="any" id="height" name="height" required>          
+            <input type="submit" value="Calculate">
+        </form>
+
+        {% if result %}
+        <p>Area of the Triangle: {{ result }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

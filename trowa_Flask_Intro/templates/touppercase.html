@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Convert to Uppercase</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .home-btn {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 20px;
+            color: #ee811a;
+            text-decoration: underline;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .home-btn:hover {
+            color: #000000;
+        }
+        
+        h1 {
+            color: #ffffff; 
+            margin-bottom: 20px;
+        }
+
+        .box {
+            background-color: #ee811a;
+            padding: 30px;
+            border-radius: 10px;
+            width: 350px;
+            box-shadow: 0 0 10px gray;
+            color: white;
+            text-align: center;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+       
+        label, p {
+            text-align: left;
+            display: block;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            text-align: left;
+            display: block;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            box-sizing: border-box; 
+        }
+
+        input[type="submit"] {
+            background-color: #ffffff;
+            color: #333333;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #000000;
+            color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <a href="/" class="home-btn">Home Page</a>
+
+    <div class="box">
+        <h1><b>(a) Convert String to Uppercase (A)</b></h1>
+
+        <form action="/toUpperCase" method="post">
+            <label for="inputString">Enter a string:</label>
+            <input type="text" id="inputString" name="inputString">
+            <input type="submit" value="Convert">
+        </form>
+
+        {% if result %}
+        <p><b>Converted string:</b><br>{{ result }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
