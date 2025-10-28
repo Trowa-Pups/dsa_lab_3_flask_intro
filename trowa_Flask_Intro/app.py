@@ -49,13 +49,12 @@ def triangle():
     
     return render_template('areaoftriangle.html', result=triangle_area)
 
-@app.route('/areaOfTriangle', methods=['GET', 'POST'])
+@app.route('/converttoPostfix', methods=['GET', 'POST'])
 def stack():
     class Node:
         def __init__(self, data):
             self.data = data
             self.next = None
-
 
     class Stack:
         def __init__(self):
@@ -66,7 +65,6 @@ def stack():
             if self.top:
                 new_node.next = self.top
             self.top = new_node
-
 
     def pop(self):
         if self.top is None:
@@ -83,7 +81,6 @@ def stack():
         else:
             return None
 
-
     def print_stack(self):
         if self.top is None:
             print("Stack is empty")
@@ -93,6 +90,38 @@ def stack():
             while current:
                 print(current.data)
                 current = current.next
+
+    precedence = {'+': 1, '-': 1, '*': 2,'/': 2,'^': 3}
+
+    def is_operator(c):
+        return c in precedence
+
+    def infix_to_postfix(expr):
+        stack = Stack()
+        output = []
+
+        for token in expr:
+            if token.isalnum(): #Checks if alphanumeric (letters or numbers)
+                output.append(token)
+
+            elif is_operator(token):
+                while (stack.peek() is not None and is_operator(stack.peek()) and precedence[stack.peek()] >= precedence[token]):
+                    output.append(stack.pop())
+                stack.push(token)
+
+            elif token == '(':
+                stack.push(token)
+
+            elif token == ')':
+                while stack.peek() != '(':
+                    output.append(stack.pop())
+                stack.pop()  #Remove '('
+
+        while stack.peek() is not None:
+            output.append(stack.pop())
+
+        return " ".join(output)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
