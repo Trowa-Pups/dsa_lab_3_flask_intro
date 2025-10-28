@@ -66,30 +66,33 @@ def stack():
                 new_node.next = self.top
             self.top = new_node
 
-    def pop(self):
-        if self.top is None:
-            return None
-        else:
-            popped_node = self.top
-            self.top = self.top.next
-            popped_node.next = None
-            return popped_node.data
+        def pop(self):
+            if self.top is None:
+                return None
+            
+            else:
+                popped_node = self.top
+                self.top = self.top.next
+                popped_node.next = None
+                return popped_node.data
 
-    def peek(self):
-        if self.top:
-            return self.top.data
-        else:
-            return None
+        def peek(self):
+            if self.top:
+                return self.top.data
+            
+            else:
+                return None
 
-    def print_stack(self):
-        if self.top is None:
-            print("Stack is empty")
-        else:
-            current = self.top
-            print("Stack elements (top → bottom):")
-            while current:
-                print(current.data)
-                current = current.next
+        def print_stack(self):
+            if self.top is None:
+                print("Stack is empty")
+
+            else:
+                current = self.top
+                print("Stack elements (top → bottom):")
+                while current:
+                    print(current.data)
+                    current = current.next
 
     precedence = {'+': 1, '-': 1, '*': 2,'/': 2,'^': 3}
 
@@ -121,6 +124,13 @@ def stack():
             output.append(stack.pop())
 
         return " ".join(output)
+    
+    result = None
+    if request.method == 'POST':
+        expr = request.form['expression']
+        result = infix_to_postfix(expr)
+
+    return render_template('converttopostfix.html', result=result)
 
 
 if __name__ == "__main__":
